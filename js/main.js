@@ -126,11 +126,11 @@ $(".navigation-link-7").hover(function() {
 });
 
 $(".navigation-link-8").hover(function() {
-  $(".project-preview").css({ "background-image": "url(img/works/Portfolio-3.png)" });
+  $(".project-preview").css({ "background-image": "url(img/works/portfolio-3.png)" });
 });
 
 $(".navigation-link-9").hover(function() {
-  $(".project-preview").css({ "background-image": "url(img/works/Portfolio-2.png)" });
+  $(".project-preview").css({ "background-image": "url(img/works/portfolio-2.png)" });
 });
 
 $(".navigation-link-10").hover(function() {
