@@ -1,0 +1,65 @@
+/// -----------------------------------------------------------------------------
+/// This file contains CSS helper classes.
+/// -----------------------------------------------------------------------------
+
+/// Clear inner floats
+.clearfix::after{
+    clear: both;
+    content: '';
+    display: table;
+  }
+  
+  /// Custom-helpers
+  .text-white{
+    color: $white;
+  }
+  
+  .full-wd{
+    width: 100%;
+  }
+  
+  .no-margin{
+    margin: 0px;
+  }
+  
+  .no-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  /// Visible only on Full HD
+  .visible-full-hd{
+    display: none !important;
+  }
+  
+  /// No break words
+  .no-break{
+    white-space: nowrap;
+  }
+  
+  /// Center images
+  img{
+    margin: 0 auto;
+  }
+  
+  /// Videos Full Width
+  video{
+    width: 100%;
+    display: block;
+  }
+
+  
+  @media (min-width: 1920px) {
+  
+    /// Hide on Full HD
+    .hidden-full-hd{
+      background: none !important;
+      height: auto !important;
+    }
+  
+    /// Visible only on Full HD
+    .visible-full-hd{
+      display: block !important;
+    }
+  
+  }

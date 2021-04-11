@@ -1,0 +1,50 @@
+.mobile-social{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid $white;
+    .social-link{
+        color: $white;
+        padding: 15px;
+        font-size: 17px;
+        flex: 1;
+        text-align: center;
+        &+.social-link{
+            border-left: 1px solid $white;
+        }
+
+        @include on-event{
+            background: $secondary-color;
+        }
+    }
+}
+
+.desktop-social{
+    position: absolute;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    .social-link{
+        font-size: 17px;
+        color: $secondary-color;
+        opacity: 0.7;
+        line-height: 1;
+        padding: 5px;
+
+        &+.social-link{
+            margin-left: 5px;
+        }
+
+        @include on-event{
+            text-decoration: none;
+            opacity: 1;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .mobile-social{
+        display: none !important;
+    }
+}

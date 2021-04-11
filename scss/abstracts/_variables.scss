@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// font
+$primary-font: 'Noto Sans KR', sans-serif;
+$secondary-font: 'Noto Sans KR', sans-serif;
+
+// fontSize
+$body-font-size: 16px;
+
+/// Copy text
+$text-color: #616161 !default;
+
+// Default colors
+$white: #ffffff;
+$black: #000000;
+$grey: #F5F5F5;
+
+// Brand color pallete
+$primary-color: #0793CF;
+$secondary-color: #E51E27;
+
+// Elemnts colors
+$btn-color: $secondary-color;
+$hover-color: $primary-color;
+$body-color: $white;
+
+$navigation-background: $primary-color;
+$testimonial-overlay: $primary-color;
+
+$footer-background: $text-color;
+$footer-text-color: $white;

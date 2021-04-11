@@ -1,0 +1,185 @@
+/// -----------------------------------------------------------------------------
+/// This file contains very basic styles.
+/// -----------------------------------------------------------------------------
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  // background-color: $white;
+  background-color: #F5F5F5;
+  font-family: $primary-font;
+  font-style: normal;
+  font-size: $body-font-size;
+  letter-spacing: letter-spacing(50, $body-font-size);
+  color: $text-color;
+  transition: background 0.2s linear;
+  // position: relative;
+}
+
+// here is the color of the dark mode
+
+body.dark {
+	background: #292C35;
+  .dark-text{
+    color: $white;
+  }
+
+  .bg-letters{
+    h1{
+      color: transparent;
+      -webkit-text-stroke: 1px rgba($white, 0.8); 
+    }
+  }
+
+  .main-content{
+    p{
+      a{
+        -webkit-text-stroke: 1px #16c79a;
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary-color;
+  font-weight: 800;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+/// Basic styles for text
+p {
+  color: $text-color;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/// Basic styles for links
+a {
+  color: $hover-color;
+  line-height: 1.5;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  @include on-event {
+    color: $hover-color;
+    text-decoration: underline;
+  }
+}
+
+/// Text selection colors
+::-moz-selection {
+  background: #eee;
+  color: $black;
+}
+
+::selection {
+  background: #eee;
+  color: $black;
+}
+
+.ad-link{
+  font-family: $secondary-font;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $white;
+  opacity: 0.75;
+
+  .accedo{
+    text-transform: lowercase;
+    font-weight: 700;
+  }
+
+  .digital{
+    text-transform: uppercase;
+    font-size: 0.75em;
+  }
+
+
+  @include on-event{
+    color: $white;
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+
+
+@media (min-width: 1600px){
+  .custom-container {
+    max-width: 1566px;
+  }
+}
+
+
+/*** style for the toggle light and dark  */
+
+.dark-mode-object{
+  // position: relative;
+  .dark-mode{
+    position: fixed;
+    bottom: 70px;
+    top: auto;
+    right: 5vh;
+    left: auto;
+    z-index: 10000;
+  }
+  
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+  
+    .ball {
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: 22px;
+      width: 22px;
+      transform: translateX(0px);
+      transition: transform 0.2s linear;
+    }
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(24px);
+  }
+  
+  
+  .fa-moon {
+    color: #f1c40f;
+  }
+  
+  .fa-sun {
+    color: #f39c12;
+  }
+}
+
+// .body.dark{
+//   .dark-text{
+//     color: #fff;
+//   }
+// }
+

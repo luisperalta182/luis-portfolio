@@ -1,0 +1,270 @@
+header {
+	background-color: $white;
+	position: relative;
+	position: fixed;
+	top: 0px;
+	bottom: auto;
+	left: 0px;
+	right: 0px;
+	z-index: 1050;
+	transition: all ease 0.5s;
+	padding: 10px 0;
+
+	&.nav-up {
+		top: 0px;
+		// top: -200px;
+	}
+
+	.navbar {
+		padding: 0px 0px;
+
+		.navbar-brand{
+			max-height: 60px;
+			margin: 15px 0px;
+			padding: 0px;
+		}
+
+		.main-logo{
+			color: $white;
+			background: $black;
+			border-radius: 50%;
+			height: 35px;
+			width: 35px;
+			text-align: center;
+			padding-top: 5px;
+			font-size: 16px;
+			text-decoration: none;
+			z-index: 10000;
+		}
+
+		.navbar-toggler {
+			background-color: transparent;
+			padding: 0px;
+			border-radius: 0px;
+			border: none;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			-webkit-transition: all ease 0.3s;
+			transition: all ease 0.3s;
+			z-index: 10;
+
+			.icon-bar {
+				display: block;
+				background: #262525;
+				height: 3px;
+				width: 25px;
+				-webkit-transition: all ease 0.3s;
+				transition: all ease 0.3s;
+				transform-origin: center center;
+
+				&.middle {
+					height: 0px;
+					opacity: 0;
+					margin: 4px 0px;
+				}
+
+				&.top {
+					transform: rotate(45deg);
+					margin-bottom: -5.5px;
+				}
+
+				&.bottom {
+					transform: rotate(-45deg);
+					margin-top: -5.5px;
+				}
+			}
+
+
+			&.collapsed {
+				// justify-content: space-between;
+
+				.icon-bar {
+					transform: rotate(0deg);
+					transform-origin: center;
+					width: 25px;
+
+					&.middle {
+						opacity: 1;
+						height: 3px;
+					}
+
+					&.top {
+						margin-bottom: 0px;
+					}
+
+					&.bottom {
+						margin-top: 0px;
+					}
+				}
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.navbar-collapse {
+			// background: $black;
+			background: #eee;
+			margin-left: -15px;
+			margin-right: -15px;
+			margin-top: 10px;
+
+			ul.navbar-nav{
+				padding: 0px;
+				li{
+					display: block;
+					.nav-link{
+						color: $black;
+						padding: 15px;
+						font-size: 14px;
+						line-height: 1;
+						text-transform: uppercase;
+						font-weight: 600;
+						letter-spacing: letter-spacing(50, 14px);
+
+						@include on-event{
+							background: $black;
+							color: $white;
+						}
+					}
+
+					.btn-action{
+						font-weight: 600;
+						font-size: 14px;
+						letter-spacing: letter-spacing(50, 14px);
+						text-transform: uppercase;
+					}
+				}
+			}
+
+
+
+		}
+	}
+
+}
+
+@media (max-width: 767.9px){
+	.header-container{
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 768px){
+	header{
+		position: relative;
+
+		border-bottom: 1px solid rgba($black, 0.2);
+		&.nav-up{
+			top: -200px
+		}
+		.navbar-expand-md{
+			.navbar-toggler{
+				display: none;
+			}
+
+		}
+
+		.navbar{
+			padding: 20px 0px 50px 0px;
+			justify-content: space-between;
+			position: relative;
+			.navbar-brand{
+				max-height: 70px;
+				margin: 0px;
+			}
+
+			.main-logo{
+				height: 45px;
+				width: 45px;
+				padding-top: 8px;
+				
+				@include on-event{
+					background: rgba($black, 0.5);
+				}
+			}
+
+			.navbar-collapse{
+				position: absolute;
+				width: 100%;
+				left: 15px;
+				right: 0;
+				bottom: auto;
+				top: auto;
+				background: transparent;
+
+				ul.navbar-nav{
+					justify-content: flex-start;
+					align-items: center;
+
+					li{
+						position: relative;
+						.nav-link{
+							padding: 23px 20px;
+
+							&:after{
+								content: "";
+								background: white;
+								  mix-blend-mode: exclusion;
+								width: calc(100%);
+								height: 0;
+								position: absolute;
+								bottom: -4px;
+								left: 0px;
+								  transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+							}
+							
+
+							@include on-event{
+								background: none;
+								color: $black;
+								&::after{
+									height: calc(100% + 5px)
+								}
+							}
+						}
+
+						&.action-item{
+							position: absolute;
+							right: 0px;
+							left: auto;
+
+							.btn-action{
+								padding: 22.5px 20px;
+							}
+
+							&::before{
+								display: none;
+							}
+						}
+
+						&+li::before{
+							content: '';
+							height: 30px;
+							width: 1px;
+							background: $black;
+							opacity: 0.2;
+							display: block;
+							position: absolute;
+							right: 100%;
+							left: auto;
+							top: 50%;
+							transform: translateY(-50%);
+							bottom: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px){
+	header .navbar .navbar-collapse ul.navbar-nav li .nav-link{
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}

@@ -1,0 +1,122 @@
+#contact {
+    text-align: right;
+    padding-top: 50px;
+
+    .form-title {
+        font-size: 30px;
+        line-height: 30px;
+        color: $text-color;
+        margin-bottom: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+
+        span {
+            display: block;
+
+            &.small-text {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+#contactForm {
+    background: $white;
+    padding: 35px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+
+    .form-group{
+        margin-bottom: 0px;
+        &+.form-group{
+            margin-top: 10px;
+        }
+        .form-control{
+            font-size: 14px;
+            color: $text-color;
+            padding: 20px 30px;
+            border: 1px solid #DADADA;
+            border-radius: 0px;
+            line-height: 1.5;
+            height: auto;
+
+            &::placeholder {
+                color: #DADADA;
+                font-style: italic;
+            }
+        }
+
+        &.btn-container{
+            margin-top: 30px;
+
+            .btn-general{
+                display: block;
+                padding: 20px;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+    #contact {
+        padding-top: 0px;
+    
+        .form-title {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 50px;
+    
+            span {
+                &.small-text {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    #contactForm {
+        padding: 45px;
+        max-width: 375px;
+        margin: 0 auto;
+    }
+    
+}
+
+@media (min-width: 1200px){
+    #contact {
+        .img-fluid{
+            margin-right: 0px;
+        }
+    }
+
+    #contactForm {
+        position: absolute;
+        left: 15px;
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-width: 1400px) {
+    #info-contact {
+        .info-container {
+            .info-item {
+                .info-description {
+
+                    .info-content {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+        }
+    }
+}

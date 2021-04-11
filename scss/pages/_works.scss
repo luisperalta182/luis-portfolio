@@ -1,0 +1,237 @@
+.works-section{
+    padding-top: 130px;
+     h1{
+         font-size: 10vw;
+         font-weight: 700;
+         color: $text-color;
+     }
+
+     .work-item{
+         position: relative;
+         margin: 40px 0;
+
+         a{
+            -webkit-text-stroke: 1px #16c79a;
+            color: transparent;
+            z-index: 1;
+            text-decoration: none;
+            font-size: 5vw;
+
+            @include on-event{
+                -webkit-text-stroke: 1px $black;
+            }
+         }
+
+         .divider{
+            background: $text-color;
+            width: 80%;
+            height: 1px;
+         }
+     }
+
+     .resume-section{
+         padding-bottom: 40px;
+         p{
+            font-size: 6.5vw;
+         }
+         a{
+            -webkit-text-stroke: 1px #16c79a;
+            color: transparent;
+            z-index: 1;
+            text-decoration: none;
+            font-size: 5vw;
+            display: block;
+
+            @include on-event{
+                -webkit-text-stroke: 1px $black;
+            }
+         }
+         .small-text{
+            padding-top: 25px;
+            display: inline-block;
+            font-size: 4.5vw;
+         }
+         ul{
+             display: inline-block;
+             list-style: none;
+             padding-left: 5px;
+             li{
+                 display: inline-block;
+                 padding: 0 10px ;
+                 a{
+                    font-size: 4.5vw;
+                 }
+             }
+         }
+     }
+}
+
+
+
+
+.works-section{
+    .navigation-wrapper{
+        .project-preview-wrapper{
+            display: none;
+        }
+        p{
+            font-size: 25px;
+            line-height: 1;
+        }
+        .navigation-list{
+            .navigation-item{
+                list-style: none;
+                a{
+                    -webkit-text-stroke: 1px #16c79a;
+                    color: transparent;
+                    z-index: 1;
+                    text-decoration: none;
+                    font-size: 5vw;
+        
+                    @include on-event{
+                        -webkit-text-stroke: 1px $black;
+                    }
+                 }
+            }
+        }
+        .made-with{
+            list-style: none;
+            padding-left: 0;
+           //  float: right;
+           text-align: right;
+            li{
+                display: inline-block;
+                text-align: right;
+                padding: 5px;
+                p{
+                    i{
+                        @include on-event{
+                            color: #16c79a;
+                        }
+                    }
+                }
+            }
+        }
+        .divider{
+            background: $text-color;
+            width: 80%;
+            height: 1px;
+            margin-bottom: 30px;
+         }
+    }
+}
+
+
+@media(min-width: 768px){
+    .works-section{
+        .work-item{
+            p{
+                font-size: 6.5vw;
+            }
+            a{
+                -webkit-text-stroke: 1px #16c79a;
+                color: transparent;
+                z-index: 1;
+                text-decoration: none;
+                font-size: 5vw;
+    
+                @include on-event{
+                    -webkit-text-stroke: 1px $black;
+                }
+             }
+        }
+        .navigation-wrapper{
+            width: 100%;
+            .project-preview-wrapper{
+                p{
+                    font-size: 9vw;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 992px){
+
+    .works-section{
+        .navigation-wrapper{
+            .project-preview-wrapper{
+                width: 100%;
+                height: 100vh;
+                position: fixed;
+                display: block;
+                justify-content: center;
+                z-index: -1;
+
+                .project-preview {
+                    position: fixed;
+                    top: 12%;
+                    left: 50%;
+                    width: 0px;
+                    height: 400px;
+                    background: url(img/works/Portfolio-1.png) no-repeat 50% 50%;
+                    background-size: cover;
+                    overflow: hidden;
+                  }
+            }
+            
+            p{
+                font-size: 6.5vw;
+            }
+            .navigation-item{
+                display: block;
+                user-select: none;
+                    .navigation-link{
+                        -webkit-text-stroke: 1px #16c79a;
+                        color: transparent;
+                        z-index: 1;
+                        text-decoration: none;
+                        font-size: 3vw;
+            
+                        @include on-event{
+                            -webkit-text-stroke: 1px $black;
+                        }
+
+                        span {
+                            position: relative;
+                            display: block;
+
+                            &::before{
+                                width: 0;
+                                color: #ffffff;
+                                overflow: hidden;
+                                position: absolute;
+                                content: attr(data-text);
+                                transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+                            }
+                        }
+                    }
+            }
+            .made-with{
+               //  float: right;
+               text-align: right;
+                li{
+                    display: inline-block;
+                    text-align: right;
+                    padding: 5px;
+                    p{
+                        i{
+                            font-size: 2.5vw;
+                        }
+                    }
+                }
+            }
+        }
+
+        .resume-section{
+            ul{
+                li{
+                    a{
+                        font-size: 3.5vw;
+                    }
+                }
+            }
+        }
+    }
+
+}
